@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="536.0" prefWidth="913.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.LoginController">
+    <children>
+        <AnchorPane prefHeight="536.0" prefWidth="314.0" style="-fx-background-color: #0c39ff;">
+            <children>
+                <ImageView fitHeight="97.0" fitWidth="108.0" layoutX="102.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@hero_img.png" />
+                    </image>
+                </ImageView>
+                <Label alignment="CENTER" layoutX="39.0" layoutY="281.0" prefHeight="28.0" prefWidth="222.0" text="Examination System" textFill="WHITE">
+                    <font>
+                        <Font name="SF Pro Display Medium" size="22.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="60.0" layoutY="309.0" prefHeight="27.0" prefWidth="181.0" text="Copyrights - Team G116" textFill="WHITE">
+                    <font>
+                        <Font name="SF Mono Regular" size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbl_close" alignment="CENTER" layoutY="5.0" onMousePressed="#handleButtonAction" prefHeight="14.0" prefWidth="27.0" text="X" textFill="WHITE" visible="false">
+                    <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                    </font>
+                </Label>
+            </children></AnchorPane>
+        <TextField fx:id="txtUsername" layoutX="507.0" layoutY="117.0" prefHeight="34.0" prefWidth="234.0" promptText="Username">
+         <font>
+            <Font name="SF Pro Display Regular" size="15.0" />
+         </font></TextField>
+        <PasswordField fx:id="txtPassword" layoutX="507.0" layoutY="169.0" prefHeight="34.0" prefWidth="234.0" promptText="Password">
+         <font>
+            <Font name="SF Pro Display Regular" size="15.0" />
+         </font></PasswordField>
+        <Button fx:id="btnSignin" layoutX="559.0" layoutY="288.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="130.0" stylesheets="@../styling/fullpackstyling.css" text="Sign in">
+         <font>
+            <Font name="SF Pro Display Regular" size="15.0" />
+         </font></Button>
+        <Button fx:id="btnSignup" layoutX="559.0" layoutY="420.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="130.0" stylesheets="@../styling/fullpackstyling.css" text="Sign Up">
+         <font>
+            <Font name="SF Pro Display Regular" size="15.0" />
+         </font></Button>
+        <Label alignment="CENTER" layoutX="530.0" layoutY="383.0" prefHeight="27.0" prefWidth="188.0" text="Don't have an account?" textFill="#5f5f5f">
+            <font>
+                <Font name="SF Pro Display Regular" size="15.0" />
+            </font>
+        </Label>
+        <Separator layoutX="507.0" layoutY="362.0" prefHeight="2.0" prefWidth="234.0" />
+      <Label layoutX="495.0" layoutY="232.0" text="Sign in as" textFill="#848484">
+         <font>
+            <Font name="SF Pro Display Regular" size="15.0" />
+         </font></Label>
+      <RadioButton fx:id="rdStudent" layoutX="562.0" layoutY="231.0" mnemonicParsing="false" prefWidth="93.0" selected="true" text="Student" textFill="#848484">
+         <toggleGroup>
+            <ToggleGroup fx:id="role" />
+         </toggleGroup>
+         <font>
+            <Font name="SF Pro Display Regular" size="15.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="rdInstructor" layoutX="654.0" layoutY="231.0" mnemonicParsing="false" text="Instructor" textFill="#848484" toggleGroup="$role">
+         <font>
+            <Font name="SF Pro Display Regular" size="15.0" />
+         </font></RadioButton>
+        <Label fx:id="lblErrors" alignment="CENTER" layoutX="507.0" layoutY="332.0" prefHeight="18.0" prefWidth="234.0" textAlignment="JUSTIFY" textFill="#ff6354" />
+      <Label layoutX="594.0" layoutY="76.0" text="Sign in" textFill="#0c39ff">
+         <font>
+            <Font name="Segoe UI" size="20.0" />
+         </font>
+      </Label>
+      <Pane fx:id="successBanner" layoutX="314.0" prefHeight="35.0" prefWidth="599.0" style="-fx-background-color: #28A745;" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="183.0" layoutY="9.0" text="Successfull regsteration. Please sign in" textFill="WHITE" />
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>

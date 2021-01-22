@@ -1,0 +1,6 @@
+db123 CIS280 DatabaseManagementSystems Hamin
+dm123 BSC221 DiscreteMathematics mabdelaal
+sa123 CIS240 StatisticalAnalysis mmounir
+ld123 CIS260 LogicDesign malqutt
+oop123 CIS250 ObjectOrientedProgramming mmabrouk
+rw123 HUM113 ReportWriting wkhalifa
