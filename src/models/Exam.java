@@ -1,21 +1,21 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Exam {
     private String iD, courseCode;
-    private String instructorName;
+    private Instructor instructor;
     private int startTime, endTime, duration, mark;
     private Date releaseDate;
     private boolean validationStatus;
-    private List<Question> questions;
+    private ArrayList<Question> questions;
 
-    public Exam(String iD, String courseCode, String instructorName,
-                int startTime, int duration, Date releaseDate, List<Question> questions) {
+    public Exam(String iD, String courseCode, Instructor instructor, int startTime, int duration, Date releaseDate, ArrayList<Question> questions) {
         this.iD = iD;
         this.courseCode = courseCode;
-        this.instructorName = instructorName;
+        this.instructor = instructor;
         this.startTime= startTime;
         this.duration = duration;
         this.endTime = calculateEndTime();
@@ -39,19 +39,19 @@ public class Exam {
         this.courseCode = courseCode;
     }
 
-    public String getInstructorName() {
-        return instructorName;
+    public Instructor getInstructor() {
+        return instructor;
     }
 
-    public void setInstructorName(String instructorName) {
-        this.instructorName = instructorName;
+    public void setInstructorName(Instructor instructor) {
+        this.instructor = instructor;
     }
-
+    
     public int getStartTime() {
         return startTime;
     }
 
-    public void setStartDate(int startTime) {
+    public void setStartTime(int startTime) {
         this.startTime = startTime;
     }
 
@@ -96,7 +96,7 @@ public class Exam {
         return questions;
     }
 
-    public void setQuestions(List<Question> questions) {
+    public void setQuestions(ArrayList<Question> questions) {
         this.questions = questions;
     }
     

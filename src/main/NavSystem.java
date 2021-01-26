@@ -16,6 +16,7 @@ public class NavSystem {
         // Get the instance of the stage from the node and close it
         Stage stage = (Stage) node.getScene().getWindow();
        
+        
         stage.setMaximized(maximize);
 
         stage.close();

@@ -1,7 +1,10 @@
 package main;
 
 import java.io.File;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +25,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
         
+        System.out.println(new Date());
     }
 
     public static void main(String[] args) {

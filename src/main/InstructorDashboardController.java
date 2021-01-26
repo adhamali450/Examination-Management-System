@@ -132,5 +132,10 @@ public class InstructorDashboardController implements Initializable{
             navSystem.SwitchScene(event, "Login.fxml");
             EndUser.loggingUser = null;
         }
+        if (event.getSource() == btnExam) {
+            System.out.println("exam!!!");
+            navSystem.SwitchScene(event, "ExamPreperation.FXML");
+        }
+        
     }
 }

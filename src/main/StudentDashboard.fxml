@@ -6,204 +6,294 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="952.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.StudentDashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.StudentDashboardController">
    <top>
-      <BorderPane prefHeight="81.0" prefWidth="952.0" BorderPane.alignment="CENTER">
-         <top>
-            <AnchorPane prefHeight="84.0" prefWidth="806.0" style="-fx-background-color: #0C39FF;" BorderPane.alignment="CENTER">
+      <BorderPane style="-fx-background-color: #0C39FF;" BorderPane.alignment="CENTER">
+         <left>
+            <HBox alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="76.0" layoutY="18.0" text="Welcome back," textFill="WHITE">
-                     <font>
-                        <Font name="SF Pro Display Regular" size="22.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="lblStudentName" layoutX="76.0" layoutY="45.0" textFill="WHITE">
-                     <font>
-                        <Font name="SF Compact Text Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="61.0" fitWidth="61.0" layoutX="15.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@hero_img.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btnLogout" layoutX="844.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" style="-fx-background-color: #0B36F3;">
+                  <VBox>
+                     <children>
+                        <Label text="Welcome back," textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Display Regular" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblStudentName" text="Adham Ali" textFill="WHITE">
+                           <font>
+                              <Font name="SF Compact Text Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </left>
+         <right>
+            <Button fx:id="btnLogout" mnemonicParsing="false" onMouseClicked="#handleButtonAction" style="-fx-background-color: #0a2ecc;" BorderPane.alignment="CENTER">
+               <graphic>
+                  <HBox spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Assets/logout.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" text="logout" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Display Regular" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </graphic>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </right>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </BorderPane>
+   </top>
+   <center>
+      <BorderPane BorderPane.alignment="CENTER">
+         <left>
+            <VBox maxHeight="1.7976931348623157E308" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnOOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleButtonAction" style="-fx-background-color: #E9E9E9;">
                      <graphic>
-                        <AnchorPane>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                            <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Assets/oop.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Object Orianted programming">
+                           <font>
+                              <Font name="SF Pro Display Regular" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </graphic>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnSA" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleButtonAction" style="-fx-background-color: #E9E9E9;">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
                            <children>
-                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Assets/logout.png" />
+                                    <Image url="@Assets/sa.png" />
                                  </image>
                               </ImageView>
-                              <Label alignment="CENTER" layoutX="37.0" layoutY="2.0" text="logout" textFill="WHITE">
+                              <Label text="Statistical Analysis">
                                  <font>
-                                    <Font name="SF Pro Display Regular" size="16.0" />
+                                    <Font name="SF Pro Display Regular" size="20.0" />
                                  </font>
                               </Label>
                            </children>
-                        </AnchorPane>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
                      </graphic>
                      <padding>
-                        <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnDBMS" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleButtonAction" style="-fx-background-color: #E9E9E9;">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Assets/dbms.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Database Managament System">
+                                 <font>
+                                    <Font name="SF Pro Display Regular" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </graphic>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnLD" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleButtonAction" style="-fx-background-color: #E9E9E9;">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Assets/ld.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Logic design">
+                                 <font>
+                                    <Font name="SF Pro Display Regular" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </graphic>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnDM" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleButtonAction" style="-fx-background-color: #E9E9E9;">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Assets/dm.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Discrete Mathematics">
+                                 <font>
+                                    <Font name="SF Pro Display Regular" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </graphic>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnRW" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleButtonAction" style="-fx-background-color: #E9E9E9;">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Assets/rw.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Report Writing">
+                                 <font>
+                                    <Font name="SF Pro Display Regular" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </graphic>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
                      </padding>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
                </children>
-            </AnchorPane>
-         </top>
-      </BorderPane>
-   </top>
-   <center>
-      <BorderPane prefHeight="562.0" prefWidth="952.0" BorderPane.alignment="CENTER">
-         <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </BorderPane.margin></VBox>
+         </left>
+         <right>
+            <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" style="-fx-background-color: #E9E9E9;" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="27.0" layoutY="28.0" style="-fx-text-fill: #0C39FF;" text="Enrolled courses">
+                  <ImageView fx:id="imgGender" fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@Assets/user-male.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblInfoStudentName" text="Adham Ahmed">
                      <font>
                         <Font name="SF Pro Display Regular" size="24.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
                   </Label>
-                  <VBox layoutX="27.0" layoutY="69.0" prefHeight="354.0" prefWidth="331.0">
+                  <HBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <Button fx:id="btnOOP" mnemonicParsing="false" style="-fx-border-width: 0.5px; -fx-background-color: #F3F3F3; -fx-border-color: #999;">
-                           <graphic>
-                              <AnchorPane maxHeight="50.0" prefHeight="50.0" prefWidth="326.0">
-                                 <children>
-                                    <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Assets/oop.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="63.0" layoutY="18.0" text="Object Orianted Programming" textAlignment="CENTER">
-                                       <font>
-                                          <Font name="SF Pro Display Regular" size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </padding>
-                              </AnchorPane>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="btnDBMS" mnemonicParsing="false" style="-fx-border-width: 0.5px; -fx-background-color: #F3F3F3; -fx-border-color: #999;">
-                           <graphic>
-                              <AnchorPane maxHeight="50.0" prefHeight="50.0" prefWidth="326.0">
-                                 <children>
-                                    <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Assets/dbms.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="66.0" layoutY="18.0" text="Database Management System" textAlignment="CENTER">
-                                       <font>
-                                          <Font name="SF Pro Display Regular" size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </padding>
-                              </AnchorPane>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="btnDM" mnemonicParsing="false" style="-fx-border-width: 0.5px; -fx-background-color: #F3F3F3; -fx-border-color: #999;">
-                           <graphic>
-                              <AnchorPane maxHeight="50.0" prefHeight="50.0" prefWidth="326.0">
-                                 <children>
-                                    <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Assets/dm.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="68.0" layoutY="18.0" text="Discrete Mathemetics" textAlignment="CENTER">
-                                       <font>
-                                          <Font name="SF Pro Display Regular" size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </padding>
-                              </AnchorPane>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="btnSA" mnemonicParsing="false" style="-fx-border-width: 0.5px; -fx-background-color: #F3F3F3; -fx-border-color: #999;">
-                           <graphic>
-                              <AnchorPane maxHeight="50.0" prefHeight="50.0" prefWidth="326.0">
-                                 <children>
-                                    <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Assets/sa.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="63.0" layoutY="18.0" text="Statistical Analysis" textAlignment="CENTER">
-                                       <font>
-                                          <Font name="SF Pro Display Regular" size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </padding>
-                              </AnchorPane>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="bntLD" mnemonicParsing="false" style="-fx-border-width: 0.5px; -fx-background-color: #F3F3F3; -fx-border-color: #999;">
-                           <graphic>
-                              <AnchorPane maxHeight="50.0" prefHeight="50.0" prefWidth="326.0">
-                                 <children>
-                                    <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Assets/ld.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="62.0" layoutY="18.0" text="Logic Design" textAlignment="CENTER">
-                                       <font>
-                                          <Font name="SF Pro Display Regular" size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </padding>
-                              </AnchorPane>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="btnRW" mnemonicParsing="false" style="-fx-border-width: 0.5px; -fx-background-color: #F3F3F3; -fx-border-color: #999;">
-                           <graphic>
-                              <AnchorPane maxHeight="50.0" prefHeight="50.0" prefWidth="326.0">
-                                 <children>
-                                    <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Assets/rw.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="60.0" layoutY="18.0" text="Report Writing" textAlignment="CENTER">
-                                       <font>
-                                          <Font name="SF Pro Display Regular" size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </padding>
-                              </AnchorPane>
-                           </graphic>
-                        </Button>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Assets/face-id.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lblStudentId" text="20201500085">
+                           <font>
+                              <Font name="SF Pro Display Regular" size="22.0" />
+                           </font>
+                        </Label>
                      </children>
-                  </VBox>
+                  </HBox>
+                  <Label fx:id="lblStudentEmail" text="adhamali_4500@outlook.com">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblStudentNumber" text="(+20) 01143954897">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="22.0" />
+                     </font>
+                  </Label>
                </children>
-            </AnchorPane>
-         </center>
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" right="20.0" top="20.0" />
+               </BorderPane.margin>
+            </VBox>
+         </right>
       </BorderPane>
    </center>
 </BorderPane>

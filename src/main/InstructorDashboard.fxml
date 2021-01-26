@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="952.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.InstructorDashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.InstructorDashboardController">
    <top>
       <BorderPane style="-fx-background-color: #0C39FF;" BorderPane.alignment="CENTER">
          <left>
@@ -94,7 +94,7 @@
                   </HBox>
                   <VBox spacing="10.0">
                      <children>
-                        <Button fx:id="btnExam" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: #0A2ECC;">
+                        <Button fx:id="btnExam" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleButtonAction" style="-fx-background-color: #0A2ECC;">
                            <graphic>
                               <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="10.0">
                                  <children>
@@ -118,7 +118,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="btnReport" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: #0A2ECC;">
+                        <Button fx:id="btnReport" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleButtonAction" style="-fx-background-color: #0A2ECC;">
                            <graphic>
                               <HBox alignment="CENTER_LEFT" spacing="10.0">
                                  <children>
@@ -145,9 +145,9 @@
                      </children>
                   </VBox>
                </children>
-               <padding>
-                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-               </padding>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </BorderPane.margin>
             </VBox>
          </left>
          <right>
@@ -163,26 +163,29 @@
                   </ImageView>
                   <Label fx:id="lblInfoInstructorName" text="Dr. Mohamed Mabrouk">
                      <font>
-                        <Font name="SF Pro Display Regular" size="18.0" />
+                        <Font name="SF Pro Display Regular" size="24.0" />
                      </font>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
                   </Label>
                   <Label fx:id="lblInstructorEmail" text="mohamed.mabrouk@cis.asu.edu.eg">
                      <font>
-                        <Font name="SF Pro Display Regular" size="18.0" />
+                        <Font name="SF Pro Display Regular" size="22.0" />
                      </font>
                   </Label>
                   <Label fx:id="lblInstructorNumber" text="(+20) 01234567890">
                      <font>
-                        <Font name="SF Pro Display Regular" size="18.0" />
+                        <Font name="SF Pro Display Regular" size="22.0" />
                      </font>
                   </Label>
                </children>
-               <padding>
-                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-               </padding>
                <BorderPane.margin>
                   <Insets bottom="20.0" right="20.0" top="20.0" />
                </BorderPane.margin>
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </padding>
             </VBox>
          </right>
       </BorderPane>

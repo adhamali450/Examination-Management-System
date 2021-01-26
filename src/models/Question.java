@@ -3,11 +3,14 @@ package models;
 import java.util.List;
 
 public class Question {
+    private String text;
     private List<String> choices;
     private int correctChoiceIndex;
     private int grade, rank;
 
-    public Question(List<String> choices, int correctChoiceIndex, int grade, int rank) {
+    public Question(String text, List<String> choices, int correctChoiceIndex, int grade, int rank) {
+        text = text;
+        
         if(choices == null)
             throw new NullPointerException("Choices for the quesiton CANNOT be null");
         
@@ -19,6 +22,14 @@ public class Question {
         this.rank = rank;
     }
 
+
+    public String getText(){
+        return text;
+    }
+    
+    public void setText(String text){
+        this.text = text;
+    }
 
     public List<String> getChoices() {
         return choices;
