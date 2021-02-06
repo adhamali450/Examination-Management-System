@@ -4,6 +4,7 @@ abstract public class EndUser {
     public static EndUser loggingUser;
     
     protected String username, password, name, phoneNumber, emailAddress;
+    protected int gender;
 
     public abstract String getUsername();
 
@@ -22,4 +23,8 @@ abstract public class EndUser {
     public abstract String getEmailAddress();
 
     public abstract void setEmailAddress(String emailAddress);
+
+    public abstract int getGender();
+
+    public abstract void setGender(int gender);
 }

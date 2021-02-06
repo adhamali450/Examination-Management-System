@@ -1,27 +1,15 @@
 package main;
 
-import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.UUID;
+
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import javafx.stage.Window;
 import models.Student;
-import utils.ConnectionUtil;
 
 
 public class SignupController implements Initializable {
@@ -44,6 +32,12 @@ public class SignupController implements Initializable {
     private TextField txtEmail;
 
     @FXML
+    private RadioButton rdMale;
+
+    @FXML
+    private RadioButton rdFemale;
+
+    @FXML
     private Label lblErrors;
 
     @FXML
@@ -56,12 +50,12 @@ public class SignupController implements Initializable {
         //sign up
         if (event.getSource() == btnSignup) {
             if (signup()) {
-                navSystem.SwitchScene(event, "Login.fxml");
-                System.out.println("data passed");
+                navSystem.switchScene(event, NavSystem.LOGIN);
+                System.out.println("registration success");
             }
         }
         else if (event.getSource() == btnGoback){
-            navSystem.SwitchScene(event, "Login.fxml");
+            navSystem.switchScene(event, NavSystem.LOGIN);
         }
     }
 
@@ -90,6 +84,7 @@ public class SignupController implements Initializable {
         String name = txtName.getText();
         String phone_num = txtPhoneNum.getText();
         String email = txtEmail.getText();
+        int gender = rdMale.isSelected() ? 0 : 1;
 
         //If username isn't unique, show error message
         if(!Student.isUniqueUsername(username)){
@@ -101,13 +96,14 @@ public class SignupController implements Initializable {
         else
         {
             //generate a unique id for the student
-            int iD = Student.nextId();
+            UUID iD = UUID.randomUUID();;
 
             //insert the new student into the database
             Student student = new Student(username, password,
-                    name, phone_num, email, iD);
+                    name, phone_num, email, iD, gender);
+            student.setGender(gender);
 
-            student.register();
+            student.push();
             return true;
         }
     }

@@ -1,6 +1,0 @@
-mmabrouk mm123 Mohamed*Mabrouk 01234567890 mohamed.mabrouk@cis.asu.edu.eg 48
-malqutt mq123 Mirvat*Al*Qutt 01234567891 mmalqutt@cis.asu.edu.eg 38
-Hamin ha123 Huda*Amin 01234567892 Huda_amin@cis.asu.edu.eg 38
-mabdelaal ma123 Mohamed*AbdelAal 01234567893 mohamedabdelaal@cis.asu.edu.eg 48
-wkhalifa wk123 Wael*Khalifa 01234567894 wael.khalifa@cis.asu.edu.eg 48
-mmounir mm123 Mahmoud*Mounir 01234567895 mahmoud.mounir@cis.asu.edu.eg 48

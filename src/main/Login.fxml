@@ -1,91 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="536.0" prefWidth="913.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.LoginController">
-    <children>
-        <AnchorPane prefHeight="536.0" prefWidth="314.0" style="-fx-background-color: #0c39ff;">
-            <children>
-                <ImageView fitHeight="97.0" fitWidth="108.0" layoutX="102.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@hero_img.png" />
-                    </image>
-                </ImageView>
-                <Label alignment="CENTER" layoutX="39.0" layoutY="281.0" prefHeight="28.0" prefWidth="222.0" text="Examination System" textFill="WHITE">
-                    <font>
-                        <Font name="SF Pro Display Medium" size="22.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" layoutX="60.0" layoutY="309.0" prefHeight="27.0" prefWidth="181.0" text="Copyrights - Team G116" textFill="WHITE">
-                    <font>
-                        <Font name="SF Mono Regular" size="13.0" />
-                    </font>
-                </Label>
-                <Label fx:id="lbl_close" alignment="CENTER" layoutY="5.0" onMousePressed="#handleButtonAction" prefHeight="14.0" prefWidth="27.0" text="X" textFill="WHITE" visible="false">
-                    <font>
-                        <Font name="Segoe UI Bold" size="13.0" />
-                    </font>
-                </Label>
-            </children></AnchorPane>
-        <TextField fx:id="txtUsername" layoutX="507.0" layoutY="117.0" prefHeight="34.0" prefWidth="234.0" promptText="Username">
-         <font>
-            <Font name="SF Pro Display Regular" size="15.0" />
-         </font></TextField>
-        <PasswordField fx:id="txtPassword" layoutX="507.0" layoutY="169.0" prefHeight="34.0" prefWidth="234.0" promptText="Password">
-         <font>
-            <Font name="SF Pro Display Regular" size="15.0" />
-         </font></PasswordField>
-        <Button fx:id="btnSignin" layoutX="559.0" layoutY="288.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="130.0" stylesheets="@../styling/fullpackstyling.css" text="Sign in">
-         <font>
-            <Font name="SF Pro Display Regular" size="15.0" />
-         </font></Button>
-        <Button fx:id="btnSignup" layoutX="559.0" layoutY="420.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="130.0" stylesheets="@../styling/fullpackstyling.css" text="Sign Up">
-         <font>
-            <Font name="SF Pro Display Regular" size="15.0" />
-         </font></Button>
-        <Label alignment="CENTER" layoutX="530.0" layoutY="383.0" prefHeight="27.0" prefWidth="188.0" text="Don't have an account?" textFill="#5f5f5f">
-            <font>
-                <Font name="SF Pro Display Regular" size="15.0" />
-            </font>
-        </Label>
-        <Separator layoutX="507.0" layoutY="362.0" prefHeight="2.0" prefWidth="234.0" />
-      <Label layoutX="495.0" layoutY="232.0" text="Sign in as" textFill="#848484">
-         <font>
-            <Font name="SF Pro Display Regular" size="15.0" />
-         </font></Label>
-      <RadioButton fx:id="rdStudent" layoutX="562.0" layoutY="231.0" mnemonicParsing="false" prefWidth="93.0" selected="true" text="Student" textFill="#848484">
-         <toggleGroup>
-            <ToggleGroup fx:id="role" />
-         </toggleGroup>
-         <font>
-            <Font name="SF Pro Display Regular" size="15.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="rdInstructor" layoutX="654.0" layoutY="231.0" mnemonicParsing="false" text="Instructor" textFill="#848484" toggleGroup="$role">
-         <font>
-            <Font name="SF Pro Display Regular" size="15.0" />
-         </font></RadioButton>
-        <Label fx:id="lblErrors" alignment="CENTER" layoutX="507.0" layoutY="332.0" prefHeight="18.0" prefWidth="234.0" textAlignment="JUSTIFY" textFill="#ff6354" />
-      <Label layoutX="594.0" layoutY="76.0" text="Sign in" textFill="#0c39ff">
-         <font>
-            <Font name="Segoe UI" size="20.0" />
-         </font>
-      </Label>
-      <Pane fx:id="successBanner" layoutX="314.0" prefHeight="35.0" prefWidth="599.0" style="-fx-background-color: #28A745;" visible="false">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.LoginController">
+   <right>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" layoutX="183.0" layoutY="9.0" text="Successfull regsteration. Please sign in" textFill="WHITE" />
+            <Label text="Sign in to continue" textFill="#ef4565">
+               <font>
+                  <Font name="SF Pro Display Regular" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Orgnized like never before !" textFill="#ef4565">
+               <font>
+                  <Font name="SF Pro Display Regular" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="-10.0" top="-22.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtUsername" promptText="Username" style="-fx-border-color: #999999; -fx-border-width: 0.5;">
+               <font>
+                  <Font name="SF Pro Display Regular" size="16.0" />
+               </font></TextField>
+            <PasswordField fx:id="txtPassword" promptText="password" style="-fx-border-color: #999999; -fx-border-width: 0.5;">
+               <font>
+                  <Font name="SF Pro Display Regular" size="16.0" />
+               </font></PasswordField>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label text="Sign in as" textFill="#8c8c8c">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="SF Pro Display Regular" size="14.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="rdStudent" mnemonicParsing="false" selected="true" text="Student" textFill="#8c8c8c">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="13.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="userRole" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rdInstructor" mnemonicParsing="false" text="Instructor" textFill="#8c8c8c" toggleGroup="$userRole">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="13.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Button fx:id="btnSignin" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleButtonAction" style="-fx-background-color: #EF4565;" text="Sign in" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Regular" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></Button>
+            <Label fx:id="lblErrors" textFill="RED">
+               <font>
+                  <Font name="SF Pro Display Regular" size="13.0" />
+               </font></Label>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></Separator>
+            <Label text="New to ExamSystem ?" textFill="#8c8c8c">
+               <font>
+                  <Font name="SF Pro Display Regular" size="16.0" />
+               </font></Label>
+            <Button fx:id="btnSignup" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#handleButtonAction" style="-fx-background-color: #Fff; -fx-border-color: #E44260;" text="Sign up" textFill="#e44260">
+               <font>
+                  <Font name="SF Pro Display Regular" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
-      </Pane>
-    </children>
-</AnchorPane>
+         <padding>
+            <Insets bottom="50.0" left="75.0" right="75.0" top="50.0" />
+         </padding>
+      </VBox>
+   </right>
+   <center>
+      <VBox alignment="CENTER" style="-fx-background-color: #EF4565;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Assets/hero_img.png" />
+               </image>
+            </ImageView>
+            <Label text="Examination System" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Regular" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Copyrights - Team G116" textFill="#dddddd">
+               <font>
+                  <Font name="Consolas Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

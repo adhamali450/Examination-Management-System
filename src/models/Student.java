@@ -4,25 +4,27 @@ import com.sun.tools.javac.Main;
 import utils.ConnectionUtil;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Student extends EndUser{
     private List<Course> coursesEnrolled;
-    private final int iD;
+    private int gender;
+    private final UUID iD;
 
     public Student(String username, String password, String name,String phoneNumber,
-                      String emailAddress, int iD) {
+                      String emailAddress, UUID iD, int gender) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.iD = iD;
         this.phoneNumber = phoneNumber;
         this.emailAddress  = emailAddress;
+        this.gender = gender;
 
-        coursesEnrolled = Course.getCourses();
+        coursesEnrolled = Course.getAllCourses();
     }
 
 
@@ -52,7 +54,7 @@ public class Student extends EndUser{
         this.name = name;
     }
 
-    public int getId() { return iD;}
+    public UUID getId() { return iD;}
 
     @Override
     public String getPhoneNumber() {
@@ -72,6 +74,16 @@ public class Student extends EndUser{
     @Override
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+    }
+
+    @Override
+    public int getGender(){
+        return this.gender;
+    }
+
+    @Override
+    public void setGender(int gender){
+        this.gender = gender;
     }
 
     //endregion
@@ -101,41 +113,14 @@ public class Student extends EndUser{
         return true;
     }
 
-    public static int nextId(){
+    public void push(){
         try{
             Connection con = DriverManager.getConnection(ConnectionUtil.dbURL, ConnectionUtil.username,
                     ConnectionUtil.password);
 
-            String query =  "select id from examsystem.students";
-            Statement statement = con.createStatement();
-            ResultSet rText = statement.executeQuery(query);
-
-            int lastId = 0;
-            while(rText.next()) {
-
-                lastId = rText.getInt("ID");
-            }
-
-            con.close();
-
-            return ++lastId;
-        }
-        catch(SQLException ex){
-            var lgr = Logger.getLogger(Main.class.getName());
-            lgr.log(Level.SEVERE, ex.getMessage(), ex);
-        }
-
-        return -1;
-    }
-
-    public void register(){
-        try{
-            Connection con = DriverManager.getConnection(ConnectionUtil.dbURL, ConnectionUtil.username,
-                    ConnectionUtil.password);
-
-            String query =  String.format("INSERT INTO STUDENTS(username, password, sname, phone_number, email_address, id) " +
-                    "VALUES('%s', '%s', '%s', '%s', '%s', %s)",
-                    username, password, name, phoneNumber, emailAddress, iD);
+            String query =  String.format("INSERT INTO STUDENTS(username, password, id, sname, phone_number, email_address, gender) " +
+                    "VALUES('%s', '%s', '%s', '%s', '%s', '%s', %s)",
+                    username.toLowerCase(), password, iD, name, phoneNumber, emailAddress.toLowerCase(), gender);
 
             Statement st = con.createStatement();
 
@@ -174,7 +159,8 @@ public class Student extends EndUser{
                             rText.getString("sname"),
                             rText.getString("phone_number"),
                             rText.getString("email_address"),
-                            Integer.parseInt(rText.getString("id"))
+                            UUID.fromString(rText.getString("id")),
+                            Integer.parseInt(rText.getString("gender"))
                     );
 
                     con.close();

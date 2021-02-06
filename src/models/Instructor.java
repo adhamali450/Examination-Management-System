@@ -3,27 +3,22 @@ package models;
 import com.sun.tools.javac.Main;
 import utils.ConnectionUtil;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Instructor extends EndUser {
-    private int age;
-    private int gender;
+    private int age, gender;
     private Course courseOffered;
 
-    public Instructor(String username, String password, String name, String mobileNumber,
+    public Instructor(String username, String password, String name, String phone_number,
                       String emailAddress, int age, int gender) {
         this.username = username;
         this.password = password;
         this.name = name;
-        this.phoneNumber = mobileNumber;
+        this.phoneNumber = phone_number;
         this.emailAddress  = emailAddress;
+        this.age = age;
         this.gender = gender;
     }
 

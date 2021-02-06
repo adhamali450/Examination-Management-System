@@ -19,7 +19,7 @@
                <children>
                   <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@hero_img.png" />
+                        <Image url="@Assets/hero_img.png" />
                      </image>
                   </ImageView>
                   <VBox>
@@ -84,7 +84,7 @@
                               <Image url="@Assets/oop.png" />
                            </image>
                         </ImageView>
-                        <Label text="Object Orianted programming">
+                        <Label text="Object Oriented programming">
                            <font>
                               <Font name="SF Pro Display Regular" size="20.0" />
                            </font>
@@ -138,7 +138,7 @@
                                     <Image url="@Assets/dbms.png" />
                                  </image>
                               </ImageView>
-                              <Label text="Database Managament System">
+                              <Label text="Database Management System">
                                  <font>
                                     <Font name="SF Pro Display Regular" size="20.0" />
                                  </font>

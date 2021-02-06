@@ -14,6 +14,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import models.EndUser;
+import models.Student;
+import utils.Avatars;
 
 /**
  * FXML Controller class
@@ -65,36 +67,43 @@ public class StudentDashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         navSystem = new NavSystem();
-        
-        lblStudentName.setText(EndUser.loggingUser.getName());
-    }    
+
+        //loading basic info
+        Student student = (Student)EndUser.loggingUser;
+
+        imgGender.setImage(Avatars.getGenderAvatar(student.getGender()));
+        lblStudentName.setText(student.getName());
+        lblInfoStudentName.setText(student.getName());
+        lblStudentId.setText(student.getId().toString());
+        lblStudentEmail.setText(student.getEmailAddress());
+        lblStudentNumber.setText(student.getPhoneNumber());
+    }
 
     @FXML
     private void handleButtonAction(MouseEvent event) {
         if (event.getSource() == btnLogout) {
-            navSystem.SwitchScene(event, "Login.FXML");
+            System.out.println("logging out");
+
+            navSystem.switchScene(event, NavSystem.LOGIN);
             EndUser.loggingUser = null;
-            
-            System.out.println("logout");
         }
         if(event.getSource() == btnOOP){
-            System.out.println("OOP");
+            navSystem.switchScene(event, navSystem.NO_EXAMS_FOUND);
         }
         if(event.getSource() == btnSA){
-            System.out.println("SA");
+            navSystem.switchScene(event, navSystem.EXAM_ATTEMPT);
         }
         if(event.getSource() == btnDBMS){
-            System.out.println("DBMS");
+            navSystem.switchScene(event, navSystem.EXAM_ATTEMPT);
         }
         if(event.getSource() == btnLD){
-            System.out.println("LD");
+            navSystem.switchScene(event, navSystem.EXAM_ATTEMPT);
         }
         if(event.getSource() == btnDM){
-            System.out.println("DM");
+            navSystem.switchScene(event, navSystem.EXAM_ATTEMPT);
         }
         if(event.getSource() == btnRW){
-            System.out.println("RW");
+            navSystem.switchScene(event, navSystem.EXAM_ATTEMPT);
         }
     }
-    
 }
